@@ -447,6 +447,7 @@ class WifiLedBulb():
 		self.__is_on = False
 		
 		self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		self.socket.settimeout(5.0)
 		self.socket.connect((self.ipaddr, self.port))
 		
 		self.__state_str = ""
